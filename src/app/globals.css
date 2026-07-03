@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f4efe6;
+  --foreground: #13201c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #c99a45;
+  color: #0b1714;
+}
+
+.hero-scene {
+  background:
+    linear-gradient(180deg, rgba(11, 23, 20, 0.66), rgba(11, 23, 20, 0.28) 42%, rgba(244, 239, 230, 0.92) 100%),
+    radial-gradient(circle at 18% 22%, rgba(255, 206, 121, 0.34), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(15, 111, 92, 0.34), transparent 30%),
+    linear-gradient(135deg, #17352f 0%, #4e3827 46%, #d9b16b 100%);
+}
+
+.skyline-mask {
+  clip-path: polygon(0 54%, 7% 54%, 7% 42%, 11% 42%, 11% 30%, 17% 30%, 17% 49%, 23% 49%, 23% 25%, 28% 25%, 28% 47%, 33% 47%, 33% 36%, 38% 36%, 38% 52%, 45% 52%, 45% 28%, 49% 28%, 49% 10%, 53% 10%, 53% 48%, 60% 48%, 60% 35%, 66% 35%, 66% 53%, 72% 53%, 72% 31%, 77% 31%, 77% 44%, 84% 44%, 84% 21%, 90% 21%, 90% 51%, 100% 51%, 100% 100%, 0 100%);
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold;
+}
+
+.cta-primary {
+  @apply focus-ring inline-flex min-h-11 items-center justify-center rounded-full bg-palm px-5 py-3 text-sm font-bold text-white shadow-lift transition hover:bg-night;
+}
+
+.cta-secondary {
+  @apply focus-ring inline-flex min-h-11 items-center justify-center rounded-full border border-white/40 px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-night;
+}
+
+.card {
+  @apply border border-ink/10 bg-white shadow-soft;
+}
+
+.input {
+  @apply min-h-11 w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/50 focus:border-palm focus:ring-4 focus:ring-palm/10;
+}
