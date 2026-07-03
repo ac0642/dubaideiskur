@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { site } from "@/lib/site";
+import { siteContent } from "@/content/siteContent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: "Dubai’de Şirket Kurmak | UAE Market Entry ve Şirket Kuruluşu Danışmanlığı",
-  description:
-    "Dubai’de şirket kurmak isteyen Türk girişimciler için free zone, mainland, banka hesabı, vergi uyumu, pazar araştırması ve B2B iş geliştirme danışmanlığı.",
+  metadataBase: new URL(siteContent.brand.url),
+  title: siteContent.metadata.title,
+  description: siteContent.metadata.description,
   alternates: {
     canonical: "/"
   },
   openGraph: {
-    title: "Dubai’de Şirket Kurmak | UAE Market Entry ve Şirket Kuruluşu Danışmanlığı",
-    description:
-      "26 yıllık dış ticaret tecrübesiyle Dubai ve UAE şirket kuruluşu, pazar araştırması, market entry ve B2B iş geliştirme danışmanlığı.",
-    url: site.url,
-    siteName: site.name,
+    title: siteContent.metadata.title,
+    description: siteContent.metadata.openGraphDescription,
+    url: siteContent.brand.url,
+    siteName: siteContent.brand.name,
     locale: "tr_TR",
     type: "website"
   },
