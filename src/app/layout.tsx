@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteContent } from "@/content/siteContent";
+import Chatbot from "./Chatbot";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteContent.brand.url),
@@ -29,8 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
-      <body>{children}</body>
-    </html>
+   <html lang="tr">
+    <body>
+      {children}
+      <Chatbot />
+    </body>
+  </html>
   );
 }
