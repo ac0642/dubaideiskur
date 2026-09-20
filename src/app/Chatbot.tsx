@@ -10,6 +10,19 @@ type Message = {
 const API_URL =
   "https://dubaideiskur-chatbot.wisdomfreelancer.workers.dev/";
 
+function getSessionId() {
+  const key = "dubaideiskur_chat_session";
+
+  let id = window.localStorage.getItem(key);
+
+  if (!id) {
+    id = crypto.randomUUID();
+    window.localStorage.setItem(key, id);
+  }
+
+  return id;
+}
+
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -59,6 +72,7 @@ export default function Chatbot() {
         body: JSON.stringify({
           message,
           history: previousMessages.slice(-8)
+          session_id: getSessionId()
         })
       });
 
