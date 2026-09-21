@@ -71,7 +71,7 @@ export default function Chatbot() {
         },
         body: JSON.stringify({
           message,
-          history: previousMessages.slice(-8)
+          history: previousMessages.slice(-8),
           session_id: getSessionId()
         })
       });
